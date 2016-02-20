@@ -1,0 +1,1 @@
+Grabs zone settings from Continuum memory. Must be ran as admin.
