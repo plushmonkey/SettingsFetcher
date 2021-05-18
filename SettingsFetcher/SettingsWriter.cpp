@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+#define WRITE_PRIZEWEIGHT(setting) out << #setting << "=" << static_cast<int>(m_Settings.PrizeWeights.setting) << std::endl
 #define WRITE_SHIP_SETTING(setting) out << #setting << "=" << static_cast<int>(m_Settings.ShipSettings[ship].setting) << std::endl
 #define WRITE_SETTING(setting) out << #setting << "=" << static_cast<int>(m_Settings.setting) << std::endl
 
@@ -192,6 +193,37 @@ void SettingsWriter::Write(std::ostream& out) {
 
     WRITE_SETTING(DoorDelay);
     WRITE_SETTING(DoorMode);
+
+    out << std::endl << "[PrizeWeight]" << std::endl;
+
+    WRITE_PRIZEWEIGHT(QuickCharge);
+    WRITE_PRIZEWEIGHT(Energy);
+    WRITE_PRIZEWEIGHT(Rotation);
+    WRITE_PRIZEWEIGHT(Stealth);
+    WRITE_PRIZEWEIGHT(Cloak);
+    WRITE_PRIZEWEIGHT(XRadar);
+    WRITE_PRIZEWEIGHT(Warp);
+    WRITE_PRIZEWEIGHT(Gun);
+    WRITE_PRIZEWEIGHT(Bomb);
+    WRITE_PRIZEWEIGHT(BouncingBullets);
+    WRITE_PRIZEWEIGHT(Thruster);
+    WRITE_PRIZEWEIGHT(TopSpeed);
+    WRITE_PRIZEWEIGHT(Recharge);
+    WRITE_PRIZEWEIGHT(Glue);
+    WRITE_PRIZEWEIGHT(MultiFire);
+    WRITE_PRIZEWEIGHT(Proximity);
+    WRITE_PRIZEWEIGHT(AllWeapons);
+    WRITE_PRIZEWEIGHT(Shields);
+    WRITE_PRIZEWEIGHT(Shrapnel);
+    WRITE_PRIZEWEIGHT(AntiWarp);
+    WRITE_PRIZEWEIGHT(Repel);
+    WRITE_PRIZEWEIGHT(Burst);
+    WRITE_PRIZEWEIGHT(Decoy);
+    WRITE_PRIZEWEIGHT(Thor);
+    WRITE_PRIZEWEIGHT(MultiPrize);
+    WRITE_PRIZEWEIGHT(Brick);
+    WRITE_PRIZEWEIGHT(Rocket);
+    WRITE_PRIZEWEIGHT(Portal);
 }
 
 void SettingsWriter::WriteShipSettings(std::ostream& out, int ship) {
